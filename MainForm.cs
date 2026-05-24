@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
+using System.Drawing.Text;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -142,6 +144,7 @@ namespace MinMotion
                 await _webView.EnsureCoreWebView2Async(env);
                 _webView.CoreWebView2.Settings.IsWebMessageEnabled = true;
                 _webView.CoreWebView2.WebMessageReceived += OnWebMessageReceived;
+                _webView.NavigationCompleted += OnNavigationCompleted;
 
                 string webDir = Path.Combine(AppContext.BaseDirectory, "web");
                 _webView.CoreWebView2.SetVirtualHostNameToFolderMapping(
@@ -150,6 +153,21 @@ namespace MinMotion
 
                 _webView.CoreWebView2.Navigate("https://minmotion.app/MINMOTION.html");
             };
+        }
+
+        private async void OnNavigationCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
+        {
+            if (!e.IsSuccess) return;
+            try
+            {
+                using (var fonts = new InstalledFontCollection())
+                {
+                    var fontNames = fonts.Families.Select(f => f.Name).ToList();
+                    string json = JsonSerializer.Serialize(fontNames);
+                    await _webView.CoreWebView2.ExecuteScriptAsync($"if (typeof _receiveSystemFonts === 'function') _receiveSystemFonts({json});");
+                }
+            }
+            catch { }
         }
 
         private void ToggleFullscreen()

@@ -99,6 +99,9 @@ Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow vid
 
 ## Version History
 
+### v0.1.32
+- Resolved system fonts loading inside WebView2 by querying installed Windows system fonts natively and sending them to the user interface. This also populates the random font lists properly with system fonts.
+
 ### v0.1.31
 - Changed default program language to English.
 - Updated default localized parameters fallback and default HTML lang attribute to English.

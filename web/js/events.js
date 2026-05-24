@@ -619,6 +619,28 @@ async function loadSystemFonts() {
     } catch (err) {}
 }
 
+window._receiveSystemFonts = function(fontsArray) {
+    if (!Array.isArray(fontsArray) || fontsArray.length === 0) return;
+    try {
+        const oldVal = DOM.font.value;
+        DOM.font.innerHTML = '';
+        [...new Set(fontsArray)].sort().forEach(f => {
+            const opt = document.createElement('option'); opt.value = `"${f}", sans-serif`; opt.textContent = f; DOM.font.appendChild(opt);
+        });
+        if (oldVal) {
+            DOM.font.value = oldVal;
+            if (DOM.font.value !== oldVal) {
+                let label = oldVal.replace(/['"]/g, '').split(',')[0].trim();
+                const opt = document.createElement('option'); opt.value = oldVal; opt.textContent = label;
+                DOM.font.appendChild(opt);
+                DOM.font.value = oldVal;
+            }
+        }
+        rebuildFontDropdownOptions();
+        renderFontListUI();
+    } catch (err) {}
+};
+
 // ─── HEX INPUT SYNC ───
 [
     { color: DOM.cText,    hex: DOM.cTextHex,    key: 'cText' },
