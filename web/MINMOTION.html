@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,15 @@
             <button type="button" id="btn-export-json" data-i18n="btnSave">💾 СОХРАНИТЬ</button>
             <button type="button" id="btn-export-video" data-i18n-title="btnExportVideoTitle" data-i18n="btnExportVideo" title="Экспорт видео" style="font-weight:bold;">🎬 ЭКСПОРТ</button>
         </div>
-        <div style="font-size: 9px; opacity: 0.4; pointer-events: none; align-self: flex-start; margin-left: 2px; font-weight: bold;">v0.1.30</div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px; font-size: 9px; opacity: 0.4; pointer-events: none; align-self: flex-start; margin-left: 2px; font-weight: bold; line-height: 1;">
+            <div>v0.1.31</div>
+            <div style="display: flex; align-items: center; gap: 3px;">
+                <span>by ITZA</span>
+                <svg viewBox="0 0 1222 1092" width="10" height="9" fill="currentColor" style="display: inline-block;">
+                    <path d="M333.5,464.3L112,61.8l446.5,203l186-264L802,300.3h372.5L922,525.3l299.5,106.5L856,684.3l249,336.5L667,770.3l-315,321.5l62.5-387.5L0,723.3L333.5,464.3z"/>
+                </svg>
+            </div>
+        </div>
     </div>
 
     <!-- FLOATING RIGHT ACTIONS (UI controls) -->
@@ -66,8 +74,8 @@
         <div class="settings-row">
             <span data-i18n="langLabel">ЯЗЫК</span>
             <div class="settings-toggle-group">
-                <button type="button" id="btn-lang-ru" class="active">RU</button>
-                <button type="button" id="btn-lang-en">EN</button>
+                <button type="button" id="btn-lang-ru">RU</button>
+                <button type="button" id="btn-lang-en" class="active">EN</button>
             </div>
         </div>
     </div>

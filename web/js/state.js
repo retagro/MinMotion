@@ -1,4 +1,4 @@
-// state.js — v0.1.6
+// state.js — v0.1.7
 
 // ───────── RUNTIME STATE ─────────
 let keyframes = [];
@@ -15,7 +15,7 @@ let selectData = null;
 let isDraggingTime = false;
 let isSeeking = false;
 let currentTheme = localStorage.getItem('theme') || 'light'; // 'light' | 'dark'
-let currentLang = localStorage.getItem('lang') || 'ru';     // 'ru' | 'en'
+let currentLang = localStorage.getItem('lang') || 'en';     // 'ru' | 'en'
 
 // ───────── KEY CATEGORIES ─────────
 const ANIMATABLE_KEYS = [
@@ -381,7 +381,7 @@ const PARAM_LABELS_I18N = {
 };
 
 function PARAM_LABELS_get(key) {
-    return (PARAM_LABELS_I18N[currentLang] || PARAM_LABELS_I18N.ru)[key] || key;
+    return (PARAM_LABELS_I18N[currentLang] || PARAM_LABELS_I18N.en)[key] || key;
 }
 
 // Совместимость — единый объект для старого кода
@@ -400,5 +400,5 @@ function mulberry32(a) {
 }
 
 function t(key) {
-    return (TRANSLATIONS[currentLang] || TRANSLATIONS.ru)[key] || key;
+    return (TRANSLATIONS[currentLang] || TRANSLATIONS.en)[key] || key;
 }

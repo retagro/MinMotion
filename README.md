@@ -99,6 +99,10 @@ Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow vid
 
 ## Version History
 
+### v0.1.31
+- Changed default program language to English.
+- Updated default localized parameters fallback and default HTML lang attribute to English.
+
 ### v0.1.30
 - Untracked instructions document from git index cache to stop showing on remote repository pages.
 - Standardized project builds across automation scripts with version 0.1.30.
