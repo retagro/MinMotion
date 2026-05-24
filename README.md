@@ -1,141 +1,131 @@
 # MinMotion
 
-[![NES.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/)
+[![.NET 10.0](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/)
 [![Platforms](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://microsoft.com)
 [![WebView2](https://img.shields.io/badge/WebView2-1.0.2849.39-orange.svg)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 
-**MinMotion** — это легковесное native-приложение для создания текстовой и шейповой анимации по ключевым кадрам с возможностью экспорта в высококачественные видеоформаты. 
+MinMotion is a lightweight native Windows application designed to create keyframe text and shape animations and export them into high-quality video formats. 
 
-Инструмент сочетает в себе вычислительную скорость и удобство интерфейса классических Windows Forms с гибкостью и интерактивностью современных веб-технологий (HTML5, JS, CSS, GSAP), работающих внутри встроенного контейнера **Microsoft Edge WebView2**.
-
----
-
-## ✨ Основные возможности
-
-- **Анимация по ключевым кадрам (Keyframing):** Полноценный встроенный таймлайн (Timeline) с дорожками (Tracks) для интерактивного создания ключевых кадров для любых параметров (текст, размер шрифта, цвета, градиенты, обводка, отступы, паттерны и др.).
-- **Веб-движок для рендеринга:** Использование библиотеки **GSAP** (GreenSock Animation Platform) для невероятно плавной и точной анимации символов, слов, абзацев и целых строк.
-- **Поддержка многоязычности (i18n):** Интерфейс переведен на русский и английский языки.
-- **Высококачественный экспорт видео:** Покадровый захват (capture) рабочей области WebView2 с последующей склейкой кадров через **FFmpeg** в форматы:
-  - **MP4 (H.264)** с высоким битрейтом.
-  - **MOV (Apple ProRes 4444)** с сохранением прозрачности (альфа-канала) для профессионального видеомонтажа.
-- **Адаптивное разрешение экспорта:** Возможность рендеринга видео в разрешении экрана или пользовательском разрешении (например, Full HD 1920x1080).
-- **Импорт и Экспорт проектов:** Сохранение состояния анимации и ключевых кадров в структурированные `.json` (или `.bmtp`) файлы для последующего редактирования.
-- **Кастомизация стилей:** Интерактивное редактирование градиентов (линейного и радиального) с флагами цветов, палитры выделения, случайные шрифты со встроенным менеджером шрифтов Windows.
-- **Темная и Светлая темы:** Адаптация под предпочтения пользователя.
+The application combines the execution speed and system integration of Windows Forms with the UI flexibility of modern web standards (HTML5, JS, CSS, GSAP) running inside Microsoft Edge WebView2.
 
 ---
 
-## 🛠 Технологический стек
+## Core Features
 
-* **Frontend:** HTML5, CSS3, ES6 JavaScript, GSAP (gsap.min.js, SplitText, TextPlugin, Draggable).
-* **Backend / Host:** C#, WinForms (.NET 10.0-windows).
-* **Интеграция:** Microsoft.Web.WebView2 для связывания и двустороннего обмена сообщениями (WebMessage) между JS и C#.
-* **Видео-кодировщик:** FFmpeg.
-
----
-
-## 🚀 Быстрый запуск и Системные требования
-
-### Требования к системе:
-* **OC:** Windows 10 / Windows 11 (x64)
-* **WebView2 Runtime:** встроен по умолчанию в современные версии Windows или загружается автоматически.
-* **.NET 10.0 Runtime** (для разработки понадобится [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)).
-
-### Подготовка FFmpeg:
-Для корректной работы экспорта видео требуется утилита **FFmpeg**:
-1. Скачайте сборку FFmpeg для Windows (например, с [ffmpeg.org](https://ffmpeg.org/download.html)).
-2. Положите файл `ffmpeg.exe` в корневую папку с проектом (рядом с файлом `MinMotion.csproj` при разработке) или в папку с исполняемым файлом `MinMotion.exe` (в папке `publish` / `bin`).
-3. *Альтернатива:* Вы можете просто добавить путь к `ffmpeg.exe` в системную переменную среды `PATH`. С# хост автоматически обнаружит его.
+- Keyframe Animation (Keyframing): Built-in timeline panel with tracks to visually record and interpolate keyframes across various properties (text, font size, tracking, colors, gradients, stroke, padding, pattern backgrounds).
+- Typography Engine: Uses GreenSock Animation Platform (GSAP) to animate characters, words, sentences, and paragraphs with absolute precision.
+- Built-in Video Export: Sequential capture of the WebView2 rendering canvas paired with on-the-fly FFmpeg processing to generate:
+  - MP4 (H.264) with high bitrate profiles.
+  - MOV (Apple ProRes 4444) supporting alpha transparency channels for professional video production workflows.
+- Customizable Branding & Layout: Responsive screen resolutions or custom output targets (such as Full HD 1920x1080).
+- Project Management: Save and load complete project states, keyframes, and track layers into structured JSON files.
+- Visual Control Over Styling: Interactive linear and radial gradient editors with draggable color stops, selection palettes, custom spacing, word wrapping, and responsive line background fitting.
+- Light and Dark Modes: Includes custom-themed color sets (Alucard and KDE Breeze Dark) mapped to user preferences.
 
 ---
 
-## 📦 Сборка и публикация проекта
+## Technology Stack
 
-### Сборка из командной строки (.NET CLI):
+- Frontend: HTML5, CSS3, ES6 JavaScript, GSAP (gsap.min.js, SplitText, TextPlugin, Draggable).
+- Backend / Desktop Host: C#, WinForms (.NET 10.0-windows).
+- Interface Bridge: Microsoft.Web.WebView2 for secure two-way event transmission (WebMessage) between JavaScript and C#.
+- Media Compiling: FFmpeg CLI interface.
 
-Перейдите в корневую директорию проекта и выполните сборку:
+---
+
+## System Requirements & Prerequisites
+
+### System Requirements:
+- Operating System: Windows 10 / Windows 11 (x64)
+- Microsoft Edge WebView2 Runtime (pre-installed on modern Windows editions or auto-downloaded if missing).
+- .NET 10.0 Runtime (for building/running source code, [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) is required).
+
+### FFmpeg Setup:
+FFmpeg is required to compile captured frames into video:
+1. Download a stable builds compilation for Windows from [ffmpeg.org](https://ffmpeg.org/download.html).
+2. Save `ffmpeg.exe` directly inside the root project directory (near `MinMotion.csproj` for development) or alongside the compiled `MinMotion.exe` in the publication/assembly folder.
+3. Alternatively, you can add `ffmpeg.exe` path to the system path (`PATH`) environment variable, and the C# host will detect it automatically.
+
+---
+
+## Building and Publishing
+
+### Compiling via .NET CLI:
+
+Open a command line console in the project root folder and execute:
 
 ```bash
-# Восстановление зависимостей
+# Restore local package dependencies
 dotnet restore
 
-# Сборка в конфигурации Release
+# Build compiled project in Release mode
 dotnet build -c Release
 ```
 
-### Публикация (создание независимого EXE-файла):
+### Self-Contained Release Generation:
 
-Проект настроен на публикацию в виде **одного файла** со всеми зависимостями (Self-contained Single-file). Для публикации выполните:
+The application is pre-configured to build a single-file, highly compressed standalone executable. Run:
 
 ```bash
 dotnet publish -c Release -o publish
 ```
 
-После выполнения команды в папке `publish` появится единственный исполняемый файл **`MinMotion.exe`**, документация WebView2 и папка **`web/`** с веб-ресурсами.
+This compilation places a single executable **`MinMotion.exe`**, the associated WebView2 binaries, and the UI-providing **`web/`** directory in the target `publish` folder.
 
-> **Важно:** Положите `ffmpeg.exe` в папку `publish` рядом с `MinMotion.exe`, чтобы пользователи собранного приложения могли экспортировать видео без дополнительной настройки.
-
----
-
-## 📂 Структура проекта
-
-* `MinMotion.csproj` — файл проекта C# / .NET.
-* `minmotion_native.sln` — файл решения Visual Studio.
-* `MainForm.cs` — главное окно приложения C#. Отвечает за WebView2, диалоговые окна открытия/сохранения проектов, покадровый preview-захват и запуск процесса FFmpeg.
-* `Program.cs` — точка входа в C# приложение.
-* `app.ico` — иконка приложения (встроена как Embedded Resource).
-* `ffmpeg.exe` — консольный транскодер видео (не коммитится в Git, должен находиться в корне для разработки).
-* `web/` — веб-ресурсы приложения:
-  * `web/MINMOTION.html` — главное окно аниматора (UI, разметка настроек, контейнер рендера).
-  * `web/style/` — CSS-стили приложения.
-  * `web/libs/` — локальные копии библиотек (GSAP и плагины).
-  * `web/js/` — клиентская логика приложения:
-    * `dom.js` — создание UI элементов, управление элементами панели, связывание с полем рендера.
-    * `state.js` — управление состоянием (State), структура анимации, сохранение параметров.
-    * `functions.js` — функции работы с таймлайном, рендерами, вычислениями GSAP.
-    * `events.js` — обработчики событий мыши, клавиатурных сокращений, импорта-экспорта, drag-and-drop.
-* `publish/` — папка с готовой сборкой для распространения.
+Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow video rendering to operate correctly right out of the box.
 
 ---
 
-## 📝 История изменений
+## Project Structure
+
+- `MinMotion.csproj` - C# project configurations and dependencies.
+- `minmotion_native.sln` - Visual Studio solution file.
+- `MainForm.cs` - Core C# application window. Hosts the WebView2 browser control, manages system file dialogs for saving/loading, performs frame-by-frame UI rendering captures, and invokes background FFmpeg subprocesses.
+- `Program.cs` - Main application entry point.
+- `app.ico` - Native application icon resource.
+- `ffmpeg.exe` - CLI video encoder (ignored by Git, placed in directory during development).
+- `web/` - Web resource files representing the main UI wrapper:
+  - `web/MINMOTION.html` - Main HTML timeline interface and editor canvas container.
+  - `web/style/` - Directory storing CSS stylesheet configurations and fonts.
+  - `web/libs/` - Local copies of key JavaScript packages (such as GSAP and core plugins).
+  - `web/js/` - Frontend engine modular files:
+    - `dom.js` - UI rendering utilities, sidebar layouts, and settings binding.
+    - `state.js` - Application state core, state definitions mapping, and properties serializing.
+    - `functions.js` - Timeline timeline logic, canvas drawing sequences, and GSAP binding functions.
+    - `events.js` - Global mouse context managers, timeline key listeners, file drag and drop, and import/export hooks.
+- `publish/` - Standalone executable directory.
+
+---
+
+## Version History
+
+### v0.1.29
+- Configured automated build and publish preparation scripts.
+- Added instructions and built artefacts tracking definitions to gitignore.
+- Completely translated documentation to English and simplified markup style.
 
 ### v0.1.28
-- Разработана новая мягкая, приятная для глаз темная тема на базе KDE Breeze Dark взамен высококонтрастной Dracula.
-- Полностью перерисованы галочки (чебоксы) в монохромный бруталистский flat-дизайн, гармонирующий с обеими темами (светлой Alucard и темной Breeze).
-- Доведена до 100% английская локализация всего интерфейса: переведены меню экспорта видео, контекстное меню ключевых кадров, предупреждения (alerts), всплывающие подсказки (tooltips) и исправлен пропущенный ключ `sBlock`.
-- Исправлен баг заливки сетки (grid) таймлайна при зуме для темной темы с использованием динамической CSS-переменной.
-- Обновлено и подготовлено к релизу.
+- Designed a new KDE Breeze Dark-based dark mode palette.
+- Redesigned visual tick box parameters with a bimodal flat minimalist look.
+- Completed full English language support across the user interface.
+- Resolved timeline grid alignment bugs on zoom states using CSS properties.
 
 ### v0.1.27
-- Полностью переведен выбор шрифта по умолчанию на локальный шрифт **PT Sans**, что исключает любые зависимости от внешнего интернет-подключения.
-- Изменен запасной (fallback) шрифт по умолчанию на PT Sans в логике JS.
-- Приложение собрано и опубликовано в виде финального релиза.
+- Shifted base typeface to an offline PT Sans setup, ensuring functional layout and fallback integrity on offline machines.
 
 ### v0.1.26
-- Добавлен локальный шрифт **PT Sans-Regular.ttf** в проект (помещён в `web/style/fonts/`).
-- Настроен сборщик MSBuild (`MinMotion.csproj`) для копирования локальных файлов шрифтов при публикации.
-- Подключено локальное семейство шрифтов `@font-face` в `web/style/style.css` и установлено в качестве основного font-main.
+- Embedded PT Sans Regular font formats in style assets.
+- Altered C# project MSBuild assets copying configurations.
 
 ### v0.1.25
-- Оптимизирован интерфейс с автоматическим скрытием правой панели кнопок в полноэкранном или свернутом UI (`hide-ui`) режиме по горячей клавише `H` или нажатию на кнопку разметки.
-- Полностью скрыта классическая верхняя панель.
+- Implemented global hotkey 'H' mapping to toggle standard sidebar interfaces in presentation styles.
 
 ### v0.1.24
-- Полностью удалена классическая верхняя панель шапки (`<header>`). Основное пространство холста теперь полностью очищено и занимает весь экран.
-- Слева добавлено плавающее меню с кнопкой сворачивания/разворачивания боковой панели параметров и вертикальной стопкой кнопок работы с проектом: **«ОТКРЫТЬ»**, **«СОХРАНИТЬ»** и **«ЭКСПОРТ»**. Смещение кнопок влево происходит автоматически при скрытии сайдбара.
-- Справа добавлена компактная вертикальная стойка с квадратными кнопками на основе высококачественных векторных SVG-иконок: **«ПОЛНЫЙ ЭКРАН»**, **«СКРЫТИЕ ИНТЕРФЕЙСА [H]»** (скрывает сайдбар, левые кнопки и таймлайн) и **«НАСТРОЙКИ»**.
-- Удалена старая локальная кнопка скрытия таймлайна, так как новое комплексное скрытие интерфейса наглядно заменяет её.
-- Оптимизирована высота сайдбара: его верхняя координата смещена к самому верху (`top: 15px`), увеличивая свободную высоту для параметров на 60 пикселей.
-
-### v0.1.23
-- Внедрен современный шрифт **Inter** в качестве основного шрифта по умолчанию для всего интерфейса и холста.
-- Полностью переработан дизайн интерфейса: удалены все жесткие Brutalist-тени (`box-shadow`) у панелей, окон ввода, кнопок, настроек и выпадающих списков.
-- Полностью перерисованы слайдеры (ползунки параметров): стандартные слайдеры заменены на кастомный минималистичный flat-дизайн с аккуратными вертикальными прямоугольными бегунками на тонких горизонтальных линиях треков, гармонично сочетающийся со светлой и тёмной темой Dracula.
+- Deleted traditional top header markup to optimize actual view canvas.
+- Introduced floating icon layouts for layout alignments.
 
 ---
 
-## 📝 Лицензия
+## License
 
-Проект распространяется под лицензией MIT. Подробности смотрите в файле `LICENSE` (при наличии).
-Библиотеки GSAP (SplitText и др.) защищены лицензиями компании GreenSock и используются исключительно в ознакомительных / некоммерческих целях.
+This software is distributed under the MIT license. Refer to local project documentation or files for terms. GSAP plugins and tools are licensed by GreenSock Inc. and are used solely for evaluation purposes.

@@ -25,3 +25,5 @@ MinMotion.csproj.lscache
 ffmpeg.exe
 
 GITHUB_INSTRUCTIONS.md
+publish.bat
+MinMotion_v*_win64.zip
