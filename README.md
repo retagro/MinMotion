@@ -6,21 +6,21 @@
 
 MinMotion is a lightweight native Windows application designed to create keyframe text and shape animations and export them into high-quality video formats. 
 
-The application combines the execution speed and system integration of Windows Forms with the UI flexibility of modern web standards (HTML5, JS, CSS, GSAP) running inside Microsoft Edge WebView2.
+The application combines the execution speed and system integration of Windows Forms with the UI flexibility of modern web standards (HTML5, ES6 JS, CSS3) running inside Microsoft Edge WebView2.
 
 ---
 
 ## TODO
-- [ ] Migrate the animation engine from GSAP to native functions
-- [ ] Add the ability to import an audio track to the timeline
 
+- [x] Migrate the animation engine from GSAP to native functions
+- [ ] Add the ability to import an audio track to the timeline
 
 ---
 
 ## Core Features
 
 - Keyframe Animation (Keyframing): Built-in timeline panel with tracks to visually record and interpolate keyframes across various properties (text, font size, tracking, colors, gradients, stroke, padding, pattern backgrounds).
-- Typography Engine: Uses GreenSock Animation Platform (GSAP) to animate characters, words, sentences, and paragraphs with absolute precision.
+- Typography Engine: Uses a custom-engineered lightweight vanilla ES6 JavaScript Animation Engine to animate characters, words, sentences, and paragraphs with absolute precision.
 - Built-in Video Export: Sequential capture of the WebView2 rendering canvas paired with on-the-fly FFmpeg processing to generate:
   - MP4 (H.264) with high bitrate profiles.
   - MOV (Apple ProRes 4444) supporting alpha transparency channels for professional video production workflows.
@@ -33,7 +33,7 @@ The application combines the execution speed and system integration of Windows F
 
 ## Technology Stack
 
-- Frontend: HTML5, CSS3, ES6 JavaScript, GSAP (gsap.min.js, SplitText, TextPlugin, Draggable).
+- Frontend: HTML5, CSS3, ES6 JavaScript, custom lightweight animation engine (animation.js).
 - Backend / Desktop Host: C#, WinForms (.NET 10.0-windows).
 - Interface Bridge: Microsoft.Web.WebView2 for secure two-way event transmission (WebMessage) between JavaScript and C#.
 - Media Compiling: FFmpeg CLI interface.
@@ -85,4 +85,4 @@ Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow vid
 
 ## License
 
-This software is distributed under the MIT license. Refer to local project documentation or files for terms. GSAP plugins and tools are licensed by GreenSock Inc. and are used solely for evaluation purposes.
+This software is distributed under the MIT license. Refer to local project documentation or files for terms.
