@@ -1,0 +1,25 @@
+# .gitignore for MinMotion Project
+
+# dotnet build artifacts
+[Bb]in/
+[Oo]bj/
+
+# Publishing directory
+publish/
+
+# MSBuild cache files
+MinMotion.csproj.lscache
+
+# User-specific developer files
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+
+# WebView2 User Data Folder (automatically created by WebView2 at runtime)
+*.WebView2/
+/MinMotion.exe.WebView2/
+
+# Large third-party binaries to exclude from repository
+ffmpeg.exe
