@@ -97,46 +97,6 @@ Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow vid
 
 ---
 
-## Version History
-
-### v0.1.32
-- Resolved system fonts loading inside WebView2 by querying installed Windows system fonts natively and sending them to the user interface. This also populates the random font lists properly with system fonts.
-
-### v0.1.31
-- Changed default program language to English.
-- Updated default localized parameters fallback and default HTML lang attribute to English.
-
-### v0.1.30
-- Untracked instructions document from git index cache to stop showing on remote repository pages.
-- Standardized project builds across automation scripts with version 0.1.30.
-
-### v0.1.29
-- Configured automated build and publish preparation scripts.
-- Added instructions and built artefacts tracking definitions to gitignore.
-- Completely translated documentation to English and simplified markup style.
-
-### v0.1.28
-- Designed a new KDE Breeze Dark-based dark mode palette.
-- Redesigned visual tick box parameters with a bimodal flat minimalist look.
-- Completed full English language support across the user interface.
-- Resolved timeline grid alignment bugs on zoom states using CSS properties.
-
-### v0.1.27
-- Shifted base typeface to an offline PT Sans setup, ensuring functional layout and fallback integrity on offline machines.
-
-### v0.1.26
-- Embedded PT Sans Regular font formats in style assets.
-- Altered C# project MSBuild assets copying configurations.
-
-### v0.1.25
-- Implemented global hotkey 'H' mapping to toggle standard sidebar interfaces in presentation styles.
-
-### v0.1.24
-- Deleted traditional top header markup to optimize actual view canvas.
-- Introduced floating icon layouts for layout alignments.
-
----
-
 ## License
 
 This software is distributed under the MIT license. Refer to local project documentation or files for terms. GSAP plugins and tools are licensed by GreenSock Inc. and are used solely for evaluation purposes.
