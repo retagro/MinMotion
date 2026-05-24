@@ -10,6 +10,13 @@ The application combines the execution speed and system integration of Windows F
 
 ---
 
+## TODO
+- [ ] Migrate the animation engine from GSAP to native functions
+- [ ] Add the ability to import an audio track to the timeline
+
+
+---
+
 ## Core Features
 
 - Keyframe Animation (Keyframing): Built-in timeline panel with tracks to visually record and interpolate keyframes across various properties (text, font size, tracking, colors, gradients, stroke, padding, pattern backgrounds).
@@ -73,27 +80,6 @@ dotnet publish -c Release -o publish
 This compilation places a single executable **`MinMotion.exe`**, the associated WebView2 binaries, and the UI-providing **`web/`** directory in the target `publish` folder.
 
 Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow video rendering to operate correctly right out of the box.
-
----
-
-## Project Structure
-
-- `MinMotion.csproj` - C# project configurations and dependencies.
-- `minmotion_native.sln` - Visual Studio solution file.
-- `MainForm.cs` - Core C# application window. Hosts the WebView2 browser control, manages system file dialogs for saving/loading, performs frame-by-frame UI rendering captures, and invokes background FFmpeg subprocesses.
-- `Program.cs` - Main application entry point.
-- `app.ico` - Native application icon resource.
-- `ffmpeg.exe` - CLI video encoder (ignored by Git, placed in directory during development).
-- `web/` - Web resource files representing the main UI wrapper:
-  - `web/MINMOTION.html` - Main HTML timeline interface and editor canvas container.
-  - `web/style/` - Directory storing CSS stylesheet configurations and fonts.
-  - `web/libs/` - Local copies of key JavaScript packages (such as GSAP and core plugins).
-  - `web/js/` - Frontend engine modular files:
-    - `dom.js` - UI rendering utilities, sidebar layouts, and settings binding.
-    - `state.js` - Application state core, state definitions mapping, and properties serializing.
-    - `functions.js` - Timeline timeline logic, canvas drawing sequences, and GSAP binding functions.
-    - `events.js` - Global mouse context managers, timeline key listeners, file drag and drop, and import/export hooks.
-- `publish/` - Standalone executable directory.
 
 ---
 
