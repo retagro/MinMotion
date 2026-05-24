@@ -23,3 +23,5 @@ MinMotion.csproj.lscache
 
 # Large third-party binaries to exclude from repository
 ffmpeg.exe
+
+GITHUB_INSTRUCTIONS.md
