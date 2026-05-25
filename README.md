@@ -1,5 +1,8 @@
 # MinMotion
 
+![introduce_minmotion.mp4]
+
+
 [![.NET 10.0](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/)
 [![Platforms](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://microsoft.com)
 [![WebView2](https://img.shields.io/badge/WebView2-1.0.2849.39-orange.svg)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
