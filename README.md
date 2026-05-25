@@ -89,4 +89,6 @@ Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow vid
 
 ## License
 
-This software is distributed under the MIT license. Refer to local project documentation or files for terms.
+This software is distributed under a customized **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** license with custom exceptions and contributor clauses. 
+
+Please refer to the full license text in the [LICENSE](./LICENSE) file for complete legally binding terms.
