@@ -1,6 +1,6 @@
 # MinMotion
 
-https://raw.githubusercontent.com/retagro/MinMotion/refs/heads/main/examples/video/instroduce_minmotion.mp4
+https://github.com/user-attachments/assets/93ed16f2-9709-4cee-af7a-ad7ebb5f5160
 
 ---
 
