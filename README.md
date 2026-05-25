@@ -2,7 +2,6 @@
 
 https://github.com/user-attachments/assets/93ed16f2-9709-4cee-af7a-ad7ebb5f5160
 
----
 
 [![.NET 10.0](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/)
 [![Platforms](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://microsoft.com)
@@ -12,14 +11,12 @@ MinMotion is a lightweight native Windows application designed to create keyfram
 
 The application combines the execution speed and system integration of Windows Forms with the UI flexibility of modern web standards (HTML5, ES6 JS, CSS3) running inside Microsoft Edge WebView2.
 
----
 
 ## TODO
 
 - [x] Migrate the animation engine from GSAP to native functions
 - [ ] Add the ability to import an audio track to the timeline
 
----
 
 ## Core Features
 
@@ -33,7 +30,6 @@ The application combines the execution speed and system integration of Windows F
 - Visual Control Over Styling: Interactive linear and radial gradient editors with draggable color stops, selection palettes, custom spacing, word wrapping, and responsive line background fitting.
 - Light and Dark Modes: Includes custom-themed color sets (Alucard and KDE Breeze Dark) mapped to user preferences.
 
----
 
 ## Technology Stack
 
@@ -42,7 +38,6 @@ The application combines the execution speed and system integration of Windows F
 - Interface Bridge: Microsoft.Web.WebView2 for secure two-way event transmission (WebMessage) between JavaScript and C#.
 - Media Compiling: FFmpeg CLI interface.
 
----
 
 ## System Requirements & Prerequisites
 
@@ -57,7 +52,6 @@ FFmpeg is required to compile captured frames into video:
 2. Save `ffmpeg.exe` directly inside the root project directory (near `MinMotion.csproj` for development) or alongside the compiled `MinMotion.exe` in the publication/assembly folder.
 3. Alternatively, you can add `ffmpeg.exe` path to the system path (`PATH`) environment variable, and the C# host will detect it automatically.
 
----
 
 ## Building and Publishing
 
@@ -85,7 +79,6 @@ This compilation places a single executable **`MinMotion.exe`**, the associated 
 
 Note: Remember to place `ffmpeg.exe` in the output `publish` folder to allow video rendering to operate correctly right out of the box.
 
----
 
 ## License
 
