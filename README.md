@@ -1,7 +1,8 @@
 # MinMotion
 
-![introduce_minmotion.mp4]
+![introduce_minmotion.mp4](examples/video/instroduce_minmotion.mp4)
 
+---
 
 [![.NET 10.0](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/)
 [![Platforms](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://microsoft.com)
