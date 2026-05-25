@@ -1,6 +1,6 @@
 # MinMotion
 
-![introduce_minmotion.mp4](examples/video/instroduce_minmotion.mp4)
+https://raw.githubusercontent.com/retagro/MinMotion/refs/heads/main/examples/video/instroduce_minmotion.mp4
 
 ---
 
